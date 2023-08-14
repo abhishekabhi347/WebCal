@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCal</title>
+    <link href="./index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form action="">
+                <div class="displaytxt"><input type="text" id="displaytxt" name="displaytxt" ></div>
+                <div class="row">
+                    <input type="button" value="AC" onclick="displaytxt.value = ` `" class="operator">
+                    <input type="button" value="( )" onclick="bracket(displaytxt)" class="operator">
+                    <input type="button" value="." onclick="displaytxt.value += `.`" class="operator">
+                    <input type="button" value="/" onclick="displaytxt.value += '/'" class="operator">
+                </div>
+
+                <div class="row">
+                    <input type="button" value="7" onclick="displaytxt.value += `7`">
+                    <input type="button" value="8" onclick="displaytxt.value += `8`">
+                    <input type="button" value="9" onclick="displaytxt.value += `9`">
+                    <input type="button" value="*" onclick="displaytxt.value += '*'" class="operator">
+                </div>
+
+                <div class="row">
+                    <input type="button" value="4" onclick="displaytxt.value += `4`">
+                    <input type="button" value="5" onclick="displaytxt.value += '5'">
+                    <input type="button" value="6" onclick="displaytxt.value += '6'">
+                    <input type="button" value="-" onclick="displaytxt.value += '-'" class="operator">
+                </div>
+
+                <div class="row">
+                    <input type="button" value="3" onclick="displaytxt.value += `3`">
+                    <input type="button" value="2" onclick="displaytxt.value += `2`">
+                    <input type="button" value="1" onclick="displaytxt.value += `1`">
+                    <input type="button" value="+" onclick="displaytxt.value += '+'" class="operator">
+                </div>
+
+                <div class="row">
+                    <input type="button" value="00" onclick="displaytxt.value += `00`">
+                    <input type="button" value="0" onclick="displaytxt.value += `0`">
+                    <input type="button" value="DE" onclick="displaytxt.value = displaytxt.value.toString().slice(0,-1)"
+                        class="operator">
+                    <input type="button" value="=" onclick="displaytxt.value = eval(displaytxt.value)">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function bracket(d) {
+            return d.value += '()'
+        }
+    </script>
+</body>
+
+</html>
